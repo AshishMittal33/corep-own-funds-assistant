@@ -1,0 +1,73 @@
+{
+  "template_id": "C 01.00",
+  "template_name": "Own Funds",
+  "version": "3.0",
+  "sections": {
+    "CET1_Capital": {
+      "fields": [
+        {
+          "code": "010",
+          "name": "Ordinary share capital",
+          "description": "Common stock issued by the institution",
+          "data_type": "monetary",
+          "sign": "positive",
+          "required": true,
+          "validation": {
+            "min_value": 0
+          },
+          "rule_reference": "CRR Article 26(1)(a)"
+        },
+        {
+          "code": "020", 
+          "name": "Share premium account",
+          "description": "Premium on CET1 instruments",
+          "data_type": "monetary",
+          "sign": "positive",
+          "required": true,
+          "rule_reference": "CRR Article 26(1)(b)"
+        },
+        {
+          "code": "030",
+          "name": "Retained earnings",
+          "description": "Accumulated profits",
+          "data_type": "monetary", 
+          "sign": "positive",
+          "required": true,
+          "rule_reference": "CRR Article 26(1)(c)"
+        },
+        {
+          "code": "040",
+          "name": "Other comprehensive income",
+          "description": "OCI reserves",
+          "data_type": "monetary",
+          "sign": "positive", 
+          "required": false,
+          "rule_reference": "CRR Article 26(1)(d)"
+        },
+        {
+          "code": "070",
+          "name": "Intangible assets",
+          "description": "Deduction: Goodwill, software, brands",
+          "data_type": "monetary",
+          "sign": "negative",
+          "is_deduction": true,
+          "required": false,
+          "rule_reference": "CRR Article 36(1)(b)"
+        },
+        {
+          "code": "100",
+          "name": "Total CET1 capital",
+          "description": "Sum of CET1 components minus deductions",
+          "data_type": "calculated",
+          "formula": "010 + 020 + 030 + 040 - 070",
+          "required": true,
+          "validation": {
+            "min_value": 0,
+            "min_percentage_of_rwa": 4.5
+          },
+          "rule_reference": "CRR Article 25"
+        }
+      ]
+    }
+  }
+}
