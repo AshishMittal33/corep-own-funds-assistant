@@ -1,0 +1,1 @@
+# corep-own-funds-assistant
