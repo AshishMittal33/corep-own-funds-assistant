@@ -1,0 +1,49 @@
+# PRA COREP REGULATORY RULES
+# Based on CRR and EBA Implementing Technical Standards
+
+## COREP TEMPLATE C 01.00 - OWN FUNDS
+
+### CET1 CAPITAL (Common Equity Tier 1)
+**CRR Article 26 - Components of CET1:**
+1. Ordinary share capital (common stock) issued by the institution
+2. Share premium accounts related to CET1 instruments
+3. Retained earnings
+4. Accumulated other comprehensive income
+5. Other reserves
+
+**COREP Reporting Codes:**
+- Row 010: Ordinary share capital
+- Row 020: Share premium account  
+- Row 030: Retained earnings
+- Row 040: Other comprehensive income
+- Row 050: Other reserves
+
+### DEDUCTIONS FROM CET1
+**CRR Article 36 - Mandatory Deductions:**
+1. Intangible assets (goodwill, software, brands) - deduct from CET1
+2. Deferred tax assets that rely on future profitability
+3. Defined benefit pension fund deficits
+
+**COREP Reporting Codes:**
+- Row 070: Intangible assets (deduction)
+- Row 080: Deferred tax assets (deduction)
+- Row 090: Pension fund deficits (deduction)
+
+### CALCULATION FORMULAS
+**Total CET1 (Row 100) =**
+(010 + 020 + 030 + 040 + 050) - (070 + 080 + 090)
+
+### VALIDATION RULES
+1. CET1 must be ≥ 4.5% of Risk Weighted Assets (RWA)
+2. Total deductions ≤ 15% of gross CET1 components
+3. All amounts must be positive except deductions
+4. Intangible assets must be fully deducted
+
+### EXAMPLE:
+Bank has:
+- Ordinary shares: £100,000,000 (Row 010)
+- Share premium: £50,000,000 (Row 020)
+- Retained earnings: £200,000,000 (Row 030)
+- Intangible assets: £30,000,000 (Row 070)
+
+CET1 = £100M + £50M + £200M - £30M = £320,000,000 (Row 100)

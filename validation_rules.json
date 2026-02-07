@@ -1,0 +1,41 @@
+{
+  "C_01_00": {
+    "field_validation": [
+      {
+        "field_code": "010",
+        "rule": "value >= 0",
+        "error_message": "Ordinary shares cannot be negative",
+        "severity": "ERROR"
+      },
+      {
+        "field_code": "070", 
+        "rule": "value <= (010 + 020 + 030) * 0.15",
+        "error_message": "Intangible assets exceed 15% of CET1 components",
+        "severity": "WARNING"
+      }
+    ],
+    "consistency_rules": [
+      {
+        "rule_id": "CET1_CALCULATION",
+        "description": "Total CET1 must equal sum of components minus deductions",
+        "condition": "100 == (010 + 020 + 030 + 040 - 070)",
+        "error_message": "CET1 calculation inconsistency",
+        "severity": "ERROR"
+      },
+      {
+        "rule_id": "CET1_MINIMUM",
+        "description": "CET1 must be at least 4.5% of RWA",
+        "condition": "100 >= rwa * 0.045",
+        "error_message": "CET1 below minimum regulatory requirement",
+        "severity": "ERROR"
+      }
+    ],
+    "completeness_rules": [
+      {
+        "required_fields": ["010", "020", "030", "100"],
+        "error_message": "Missing required CET1 fields",
+        "severity": "ERROR"
+      }
+    ]
+  }
+}
