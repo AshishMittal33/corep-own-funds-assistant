@@ -9,8 +9,8 @@ You describe a banking scenario in English, and it fills the COREP regulatory fo
 
 1. Install:
 ```bash
-git clone https://github.com/yourusername/corep-assistant
-cd corep-assistant
+git clone https://github.com/AshishMittal33/corep-own-funds-assistant.git
+cd corep-own-funds-assistant
 pip install -r requirements.txt
 ```
 2. Add your Groq API key (free from console.groq.com) to .env file:
